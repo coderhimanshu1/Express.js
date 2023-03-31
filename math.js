@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const {
+  findMode,
   findMedian,
   findMean,
   convertAndValidateArray,

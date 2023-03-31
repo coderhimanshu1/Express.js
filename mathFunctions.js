@@ -1,3 +1,28 @@
+// Calculate frequency of number in an array
+function calculateFrequency(array) {
+  return array.reduce(function (acc, next) {
+    acc[next] = (acc[next] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+// Function to calculate mode
+function findMode(array) {
+  let freqCounter = calculateFrequency(array);
+
+  let count = 0;
+  let mostFrequent;
+
+  for (let key in freqCounter) {
+    if (freqCounter[key] > count) {
+      mostFrequent = key;
+      count = freqCounter[key];
+    }
+  }
+
+  return +mostFrequent;
+}
+
 // Function to calculate median
 function findMedian(array) {
   // sort and get the middle element
@@ -39,4 +64,4 @@ function convertAndValidateArray(numString) {
   return numArray;
 }
 
-module.exports = { findMedian, findMean, convertAndValidateArray };
+module.exports = { findMode, findMedian, findMean, convertAndValidateArray };
