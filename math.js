@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
-const { convertAndValidateArray } = require(".mathFunctions.js");
+const { findMean, convertAndValidateArray } = require("./mathFunctions");
 // Route to calculate mean/ average
 app.get("/mean", (req, res) => {
   // Throw error if empty query strings
   if (!req.query.nums) throw Error("Missing Query Inputs", 400);
 
   let numString = req.query.nums.split(",");
+
   let nums = convertAndValidateArray(numString);
   let result = {
     operation: "mean",
