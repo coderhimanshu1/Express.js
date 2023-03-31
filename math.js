@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
-const { findMean, convertAndValidateArray } = require("./mathFunctions");
+const {
+  findMedian,
+  findMean,
+  convertAndValidateArray,
+} = require("./mathFunctions");
 // Route to calculate mean/ average
 app.get("/mean", (req, res) => {
   // Throw error if empty query strings

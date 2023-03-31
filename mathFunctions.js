@@ -1,11 +1,26 @@
+// Function to calculate median
+function findMedian(array) {
+  // sort and get the middle element
+  array.sort((a, b) => a - b);
+  let middleIndex = Math.floor(array.length / 2);
+
+  let median;
+
+  if (array.length % 2 === 0) {
+    median = (array[middleIndex] + array[middleIndex - 1]) / 2;
+  } else {
+    median = array[middleIndex];
+  }
+  return median;
+}
+
 // Function to calculate mean / average
-function findMean(nums) {
-  console.log(nums);
-  if (nums.length === 0) return 0;
+function findMean(array) {
+  if (array.length === 0) return 0;
   return (
-    nums.reduce(function (acc, cur) {
+    array.reduce(function (acc, cur) {
       return acc + cur;
-    }) / nums.length
+    }) / array.length
   );
 }
 
@@ -24,4 +39,4 @@ function convertAndValidateArray(numString) {
   return numArray;
 }
 
-module.exports = { findMean, convertAndValidateArray };
+module.exports = { findMedian, findMean, convertAndValidateArray };
