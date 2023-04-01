@@ -55,7 +55,7 @@ function convertAndValidateArray(numString) {
 
   for (let i = 0; i < numString.length; i++) {
     let valToNum = Number(numString[i]);
-    console.log(i);
+
     if (Number.isNaN(valToNum))
       return new Error(`${numString[i]} is not a valid number`);
 
